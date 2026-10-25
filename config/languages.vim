@@ -64,6 +64,21 @@ let g:my_langs.nix = {
   \ 'repl': [{'cmd': 'nix repl', 'paste': 0}],
   \ }
 
+" ── HTML ─────────────────────────────────────────────────────────────────────
+let g:my_langs.html = {
+  \ 'run': 'xdg-open {file}',
+  \ 'fmt': ['prettier --stdin-filepath {file}'],
+  \ 'lsp': [[{'name': 'htmlls', 'cmd': ['vscode-html-language-server', '--stdio']}]],
+  \ }
+
+" ── PHP ──────────────────────────────────────────────────────────────────────
+let g:my_langs.php = {
+  \ 'run': 'php {file}',
+  \ 'lsp': [[{'name': 'intelephense', 'cmd': ['intelephense', '--stdio']},
+  \          {'name': 'phpactor',     'cmd': ['phpactor', 'language-server']}]],
+  \ 'repl': [{'cmd': 'php -a', 'paste': 0}],
+  \ }
+
 " ── Herramientas generales (solo informativas: las enseña :Doctor) ───────────
 let g:my_tools = {
   \ 'fzf':     'buscador difuso (todo <Space>f...)',
